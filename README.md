@@ -1,47 +1,39 @@
-# Svelte + Vite
+# hello-world
 
-This template should help get you started developing with Svelte in Vite.
+This is a repo for getting for playing around with basic web technologies. This will probably not be all to interesting for a while.
 
-## Recommended IDE Setup
+## Some foundational words:
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+- There will always be version of a similar thing I do from somebody who has more experience than me.
+- However, the main goal is to do something by myself
+- This is the internet. Do not pretend it is not.
+- The key is to start small
 
-## Need an official Svelte framework?
+## The tools according to ~~the MDN-tutorial~~ me:
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+- Plain JS
+- Prettier
+- ESlint
+- Svelte with Vite
+- Github
 
-## Technical considerations
+## Active Project
 
-**Why use this over SvelteKit?**
+- Kniffel game
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+## A List of project Ideas
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
-
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `checkJs` in the JS template?**
-
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+- Tic-Tac-Toe-game
+- Kniffel game
+- A 2-Body Gravity simulation
+- Bumms-Zack game
+- Website with info about myself
+- A bending beam simulator
+- Some applet to create pixel art from tea-bag-icons
+- A visualization of different meteorite sizes
+- verrückte labyrinth Card-game
+- Snake clone
+- Insert text, which then melts down or falls into a pit letter by letter
+- A fractal generator
+- The game of life
+- A site with a list of paradigmes for creative programming
