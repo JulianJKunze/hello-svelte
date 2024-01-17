@@ -6,3 +6,4 @@ export default defineConfig({
   base: "/hello-svelte/", // change to your repo name
   plugins: [svelte()],
 });
+
