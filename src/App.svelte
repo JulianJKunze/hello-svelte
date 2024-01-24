@@ -1,9 +1,11 @@
 <script>
+  import Die from "./lib/Die.svelte";
+
   const eyes = [0, 0, 0, 0, 0];
   const diceIds = [0, 1, 2, 3, 4];
   let isKept = [false, false, false, false, false];
   let lastRoll = 0;
-  $: canKeepDies = lastRoll === 1 || lastRoll === 2;
+  $: canSelectDies = lastRoll === 1 || lastRoll === 2;
 
   const rollMessage = [
     "Roll the dice!",
@@ -25,7 +27,7 @@
   }
 
   function toggleDieState(dieId) {
-    if (canKeepDies) {
+    if (canSelectDies) {
       isKept[dieId] = !isKept[dieId];
     }
   }
@@ -41,24 +43,12 @@
       <div class="diceBoard">
         {#if lastRoll !== 0}
           {#each diceIds as dieId}
-            <!-- svelte-ignore a11y-click-events-have-key-events -->
-            <!-- svelte-ignore a11y-no-static-element-interactions -->
-            <div
-              class="diceBoard__dieContainer {canKeepDies ? 'clickable' : ''}
-               {isKept[dieId]
-                ? 'diceBoard__diceContainer--isKept'
-                : 'diceBoard__diceContainer--isRerolled'}"
-              on:click={() => toggleDieState(dieId)}
-            >
-              <svg
-                class="diceBoard__die dieId-{dieId}"
-                width="100%"
-                height="100%"
-                viewBox="0 0 100 100"
-              >
-                <use href="die-{eyes[dieId]}.svg#Flat"></use>
-              </svg>
-            </div>
+            <Die
+              eyes={eyes[dieId]}
+              isKept={isKept[dieId]}
+              canSelectDie={canSelectDies}
+              on:dieClicked={() => toggleDieState(dieId)}
+            ></Die>
           {/each}
         {/if}
       </div>
@@ -86,23 +76,5 @@
     display: flex;
     width: 500px;
     align-items: center;
-  }
-
-  .diceBoard__dieContainer {
-    flex: 1;
-    margin: 10px;
-    border-radius: 10px;
-    color: rgba(255, 255, 255, 0.87);
-  }
-
-  .diceBoard__diceContainer--isKept {
-    border: 3px solid #646cff;
-  }
-  .diceBoard__diceContainer--isRerolled {
-    border: 3px solid transparent;
-  }
-
-  .diceBoard__die {
-    vertical-align: middle;
   }
 </style>
