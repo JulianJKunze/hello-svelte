@@ -12,7 +12,8 @@
 
 <div
   on:click={() => dispatch("dieClicked")}
-  class="diceBoard__dieContainer {canSelectDie ? 'clickable' : ''}
+  class="diceBoard__dieContainer
+  {canSelectDie ? 'clickable' : ''}
   {isKept
     ? 'diceBoard__diceContainer--isKept'
     : 'diceBoard__diceContainer--isRerolled'}"

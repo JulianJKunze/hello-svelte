@@ -1,5 +1,8 @@
 <script>
   import Die from "./lib/Die.svelte";
+  import Table from "./lib/Table.svelte";
+
+  const infiniteRollsPossible = true;
 
   const eyes = [0, 0, 0, 0, 0];
   const diceIds = [0, 1, 2, 3, 4];
@@ -20,7 +23,7 @@
         eyes[dieId] = Math.ceil(Math.random() * 6);
       }
     }
-    lastRoll = lastRoll + 1;
+    infiniteRollsPossible ? (lastRoll = 1) : (lastRoll = lastRoll + 1);
     if (lastRoll === 3) {
       isKept = [true, true, true, true, true];
     }
@@ -51,6 +54,9 @@
             ></Die>
           {/each}
         {/if}
+      </div>
+      <div>
+        <Table {eyes}></Table>
       </div>
     </div>
   </div>
