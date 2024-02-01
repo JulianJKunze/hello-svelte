@@ -39,25 +39,26 @@
 <main>
   <div class="gameArea">
     <h1>Let's play Yahtzee</h1>
-    <div class="diceApplet">
-      <button disabled={lastRoll === 3} on:click={rollDies}>
-        {rollMessage[lastRoll]}</button
-      >
-      <div class="diceBoard">
-        {#if lastRoll !== 0}
-          {#each diceIds as dieId}
-            <Die
-              eyes={eyes[dieId]}
-              isKept={isKept[dieId]}
-              canSelectDie={canSelectDies}
-              on:dieClicked={() => toggleDieState(dieId)}
-            ></Die>
-          {/each}
-        {/if}
-      </div>
-      <div>
-        <Table {eyes}></Table>
-      </div>
+
+    <button disabled={lastRoll === 3} on:click={rollDies}>
+      {rollMessage[lastRoll]}</button
+    >
+
+    <div class="diceBoard">
+      {#if lastRoll !== 0}
+        {#each diceIds as dieId}
+          <Die
+            eyes={eyes[dieId]}
+            isKept={isKept[dieId]}
+            canSelectDie={canSelectDies}
+            on:dieClicked={() => toggleDieState(dieId)}
+          ></Die>
+        {/each}
+      {/if}
+    </div>
+
+    <div>
+      <Table {eyes}></Table>
     </div>
   </div>
 </main>
@@ -68,10 +69,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-  .diceApplet {
-    display: flex;
-    flex-direction: column;
   }
 
   button {
