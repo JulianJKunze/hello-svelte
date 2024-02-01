@@ -40,7 +40,11 @@
   <div class="gameArea">
     <h1>Let's play Yahtzee</h1>
 
-    <button disabled={lastRoll === 3} on:click={rollDies}>
+    <button
+      class="btn btn-primary"
+      disabled={lastRoll === 3}
+      on:click={rollDies}
+    >
       {rollMessage[lastRoll]}</button
     >
 
@@ -69,10 +73,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-
-  button {
-    display: block;
   }
 
   .diceBoard {
